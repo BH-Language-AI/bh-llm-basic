@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Status izvještaj</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Status izvještaj br. 8</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">19. novembar 2026 · baza Salamandra-2B · faza: priprema datasetova</div>
+</div>
+<div style="padding:24px 28px;">
+<p style="font-size:14px;">Pozdrav,<br>konsolidovano stanje projekta nakon današnjeg rada. Svi artefakti su pushani u <b>BH-Language-AI/bh-llm-basic</b>.</p>
+
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">1 · Mjerenja baseline</h3>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;"><b>Tokenizer fertility</b></td><td style="padding:8px;border:1px solid #ddd;">1,57 tok/riječ <span style="background:#d4edda;padding:2px 8px;border-radius:10px;font-size:11px;">GOTOVO</span></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;"><b>Single-sentence PPL</b></td><td style="padding:8px;border:1px solid #ddd;">bs-opće 16,0 · admin 31,9 · EN 25,8 · kolokv. 68 · lokalno 175–599 <span style="background:#d4edda;padding:2px 8px;border-radius:10px;font-size:11px;">GOTOVO</span></td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;"><b>Dokument-level PPL</b></td><td style="padding:8px;border:1px solid #ddd;">klix ~21,9 · wiki ~18,7 (zdrave base vrijednosti) <span style="background:#d4edda;padding:2px 8px;border-radius:10px;font-size:11px;">GOTOVO</span></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;"><b>Belebele razumijevanje</b></td><td style="padding:8px;border:1px solid #ddd;">bs NE postoji → hrvatski proxy, 120 pitanja <span style="background:#fff3cd;padding:2px 8px;border-radius:10px;font-size:11px;">U TOKU</span></td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;"><b>Flores prijevod</b></td><td style="padding:8px;border:1px solid #ddd;">Gated dataset — treba zahtjev za pristup <span style="background:#f8d7da;padding:2px 8px;border-radius:10px;font-size:11px;">BLOKIRANO</span></td></tr>
+</table>
+
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">2 · Miks v0.1 (534k redova, leak-check 0)</h3>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#0b3d2e;color:#fff;"><td style="padding:8px;"><b>Blok</b></td><td style="padding:8px;"><b>Redova</b></td><td style="padding:8px;"><b>Sastav</b></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">CPT train</td><td style="padding:8px;border:1px solid #ddd;">401.329</td><td style="padding:8px;border:1px solid #ddd;">bc-v03 254k · wiki 69k · klix 50k · FineTome-filtr. 35k</td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;">SFT train</td><td style="padding:8px;border:1px solid #ddd;">122.196</td><td style="padding:8px;border:1px solid #ddd;">kurirani 26,5k + rječnici bc-v02 96,2k</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">Held-out</td><td style="padding:8px;border:1px solid #ddd;">10.716</td><td style="padding:8px;border:1px solid #ddd;">2% hash-split, nikad u train</td></tr>
+</table>
+<p style="font-size:12px;color:#555;">Filteri: dužina 50–4000 riječi, ijekavica ≥ 0,5, dedup SHA-1. FineTome je miješan ekavski (0,57) pa je filtriran.</p>
+
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">3 · Tehnika (validirano na CPU)</h3>
+<ul style="font-size:13px;">
+<li><b>Template adapter</b> — Salamandra nema chat_template → bosanske oznake + <code>&lt;/s&gt;</code> <span style="background:#d4edda;padding:2px 8px;border-radius:10px;font-size:11px;">OK</span></li>
+<li><b>train_sft.py + train_cpt.py</b> — LoRA r16, end-to-end test, 2 uhvaćena bug-a (warmup_ratio, bf16/CPU) <span style="background:#d4edda;padding:2px 8px;border-radius:10px;font-size:11px;">OK</span></li>
+<li><b>LUMI smoke paket</b> — sbatch + 2000 renderiranih redova, čeka submit <span style="background:#fff3cd;padding:2px 8px;border-radius:10px;font-size:11px;">SPREMNO</span></li>
+<li><b>BiH-znanje set</b> — 50 pitanja, held-out, treba recenziju govornika <span style="background:#fff3cd;padding:2px 8px;border-radius:10px;font-size:11px;">DRAFT</span></li>
+</ul>
+
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">4 · Organizacija</h3>
+<ul style="font-size:13px;">
+<li><b>Transfer gotov:</b> agentmujo-training → BH-Language-AI (URL-migracija, testovi 60/60)</li>
+<li><b>Branch protection</b> na oba repoa (PR + 1 review, admin bypass ostaje)</li>
+</ul>
+
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">5 · Blokeri (treba vas)</h3>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr><td style="padding:8px;border:1px solid #ddd;">LUMI pristup s ove mašine</td><td style="padding:8px;border:1px solid #ddd;">EFP cert istekao; put ide preko Oracle skočnog čvora <span style="background:#f8d7da;padding:2px 8px;border-radius:10px;font-size:11px;">VI</span></td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;">GPU run (i najmanji smoke)</td><td style="padding:8px;border:1px solid #ddd;">Čeka eksplicitno odobrenje po Charteru <span style="background:#f8d7da;padding:2px 8px;border-radius:10px;font-size:11px;">VI</span></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">HF upload miksa (586 MB)</td><td style="padding:8px;border:1px solid #ddd;">Čeka vaš pogled na brojeve <span style="background:#e2e3e5;padding:2px 8px;border-radius:10px;font-size:11px;">ČEKA</span></td></tr>
+</table>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;opacity:.95;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

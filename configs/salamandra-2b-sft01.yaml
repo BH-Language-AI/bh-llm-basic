@@ -1,0 +1,34 @@
+# BH-LLM-Basic 2B SFT-01 — prvi SFT run (LUMI; ceka GPU odobrenje + cert refresh).
+# Recept: qwen35-2b joint stil (r16, 1 epoha) prilagodjen Salamandra-2B bazi.
+# Render: scripts/render_salamandra.py (bosanske oznake + </s>; BEZ ChatML-a).
+experiment_id: salamandra-2b-sft-01
+mode: sft
+model_name: BSC-LT/salamandra-2b
+model_revision: 1812f3829e123d08541b3ea2fede5366f29d3ee92
+dataset: BH-Language-AI/bs-llm-2b-mix-v01
+dataset_revision: TBD-miks-manifest-v01
+data_file: sft_mix_v01.jsonl
+split: train
+max_samples: null
+output_dir: outputs/salamandra-2b-sft-01
+max_seq_length: 4096
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 32
+learning_rate: 2.0e-5
+num_train_epochs: 1
+warmup_ratio: 0.05
+weight_decay: 0.0
+logging_steps: 10
+save_steps: 100
+save_total_limit: 2
+gradient_checkpointing: true
+load_in_4bit: false
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+seed: 42
+notes: >
+  Llama-arh (MHA 16/16) pa isti target moduli kao Qwen. bf16 na LUMI
+  (MI250X podrzava bf16); 4-bit SAMO za lokalni smoke na malim GPU-ima.
+  CPT faza dolazi prije ovog SFT-a (poseban config + miks).

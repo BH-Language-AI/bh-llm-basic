@@ -1,0 +1,46 @@
+{
+  "klix-news": {
+    "repo": "Seferovic/bosnian-news-articles-dataset-from-klixba",
+    "cap": 2000,
+    "n": 2000,
+    "avg_chars": 1796.7,
+    "avg_words": 277.4,
+    "cyrillic_share": 0.007,
+    "ije_hits": 4385,
+    "ek_hits": 1403,
+    "ije_share": 0.7576
+  },
+  "wikipedia-bs": {
+    "repo": "ffatty/plaintext-wikipedia-full-bosnian",
+    "cap": 2000,
+    "n": 2000,
+    "avg_chars": 4647.1,
+    "avg_words": 699.4,
+    "cyrillic_share": 0.0205,
+    "ije_hits": 9694,
+    "ek_hits": 2909,
+    "ije_share": 0.7692
+  },
+  "finetome-bs": {
+    "repo": "TimesLast/FineTome-Alpaca-Bosnian",
+    "cap": 2000,
+    "n": 2000,
+    "avg_chars": 1440.2,
+    "avg_words": 212.5,
+    "cyrillic_share": 0.0,
+    "ije_hits": 2907,
+    "ek_hits": 2180,
+    "ije_share": 0.5715
+  },
+  "parliament-700": {
+    "repo": "zastuck/bosnian-parliament-700",
+    "cap": 2000,
+    "n": 563,
+    "avg_chars": 3820.2,
+    "avg_words": 1131.1,
+    "cyrillic_share": 0.0,
+    "ije_hits": 0,
+    "ek_hits": 20,
+    "ije_share": 0.0
+  }
+}

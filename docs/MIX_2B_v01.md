@@ -41,7 +41,12 @@ ne dirati. Leakage: cross-dataset dedup + `leakage_report.json` (reuse
 ## Status
 
 - [x] fertility 1.57 (CPU)
-- [ ] PPL baseline (u toku, CPU; sporo — rezultat u sljedecem izvjestaju)
+- [x] single-sentence PPL orijentir (CPU, fp32, sa dijakritikom — sumljivo,
+      prvi tokeni dominiraju, ali pattern jasan):
+      bs-opce 16.0 / bs-admin 31.9 / en 25.8 / bs-kolok 68.2 /
+      bs-lokal (Jelah/Tešanj) 174.6 / bs-knjiz 599.4.
+      Zakljucak: opci jezik OK, lokalni toponimi i kolokacije rupe -> CPT ima sta popraviti.
+- [ ] dokument-level PPL (`scripts/ppl_baseline.py`, klix+wiki po 5 dokova — u toku)
 - [x] izvorni profili (4 nova izvora)
 - [x] template adapter + self-check
 - [x] SFT config (`configs/salamandra-2b-sft01.yaml`)

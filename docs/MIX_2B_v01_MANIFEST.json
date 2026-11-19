@@ -1,0 +1,20 @@
+{
+  "cpt": {
+    "bc-v02": 127,
+    "bc-v03": 254540,
+    "klix": 50000,
+    "wiki": 69723,
+    "parl": 547,
+    "finetome": 35091
+  },
+  "sft": 122703,
+  "heldout": 10716,
+  "drop_dup": 511,
+  "drop_filter": 190323,
+  "fix_bc_v02_to_sft": {
+    "moved_to_sft": 96203,
+    "moved_to_heldout": 2021,
+    "dup_vs_cpt": 0
+  },
+  "notes": "SFT text = canonical JSON string (json.loads na loadu). CPT text = cisti tekst."
+}

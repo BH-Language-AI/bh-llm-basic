@@ -7,7 +7,7 @@ odvojen od traina. Ovaj protokol se zamrzava PRIJE prvog GPU runa.
 
 | Sloj | Benchmark | Zasto | Status |
 |---|---|---|---|
-| Razumijevanje | Belebele `hrv_Latn` (proxy) | bs NE POSTOJI u Belebele (provjereno 2026-11-19); hrv najblizi srodnik | hrv proxy |
+| Razumijevanje | Belebele `hrv_Latn` (proxy) | **0.342 (41/120, slucajno 0.25)** — base model, full-seq-PPL metoda; orijentir, ne gate | IZMJERENO CPU 2026-11-19 |
 | Prijevod | Flores-200 `bos_Latn` | GATED dataset (treba pristup) — baseline tek nakon odobrenja | BLOKIRANO |
 | Zdrav razum | ARC/hr-sr-bs prijevodi + PIQA-bs (sinteticki?) | NEMA gotovog bs — treba prevesti/provjeriti | GAP |
 | Znanje BiH | vlastiti set (50-100 pitanja: ustav, kantoni, historija) | niko drugi ne pokriva | NAPRAVITI, held-out |

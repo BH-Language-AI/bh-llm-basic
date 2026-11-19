@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 9</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 9 — Belebele baseline</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">19. novembar 2026 · Salamandra-2B base (netreniran)</div>
+</div>
+<div style="padding:24px 28px;">
+<div style="background:#eef4f1;border-left:4px solid #0b3d2e;padding:14px 16px;font-size:15px;">
+<b>Rezultat: 41/120 = 0,342</b> <span style="color:#555;">(slučajno pogađanje 0,25)</span>
+</div>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Šta je mjereno</h3>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;"><b>Benchmark</b></td><td style="padding:8px;border:1px solid #ddd;">Belebele čitanje s razumijevanjem, hrvatski split (proxy)</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;"><b>Zašto proxy</b></td><td style="padding:8px;border:1px solid #ddd;">Bosanski NE postoji u Belebele (provjereno); hrvatski najbliži srodnik</td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;"><b>Metoda</b></td><td style="padding:8px;border:1px solid #ddd;">Zero-shot, izbor opcije s najmanjim PPL-om cijele sekvence</td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;"><b>Model</b></td><td style="padding:8px;border:1px solid #ddd;">Netrenirani base, fp32 CPU, 120 pitanja</td></tr>
+</table>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Interpretacija</h3>
+<ul style="font-size:13px;">
+<li>Model je <b>iznad slučajnosti</b> (+9 poena) — razumije štokavski tekst i bez treninga.</li>
+<li>Broj je <b>orijentir, ne gate</b>: gruba metoda + srodni (ne isti) jezik + base model.</li>
+<li>Pravi test dolazi poslije CPT/SFT-a <b>istom metodom na istom setu</b> — tada se vidi dobitak.</li>
+<li>BiH-znanje set (50 pitanja) je napisan i čeka recenziju govornika prije službene upotrebe.</li>
+</ul>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Stanje blokera (nepromijenjeno)</h3>
+<ul style="font-size:13px;">
+<li>LUMI submit — treba Oracle skočni čvor / svjež cert (vi)</li>
+<li>GPU run — čeka odobrenje (vi)</li>
+<li>HF upload miksa — čeka vaš pogled (vi)</li>
+<li>Flores — gated, treba zahtjev za pristup</li>
+</ul>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

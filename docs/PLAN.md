@@ -1,6 +1,10 @@
 # BH-LLM-Basic — Plan (Faza 0 zaključak)
 
 ## Gotovo (Faza 0)
+- [x] 2026-11-19: MIGRACIJA GOTOVA — `xnet-ba/agentmujo-training` transferiran u
+  `BH-Language-AI/agentmujo-training` (API transfer, historija sacuvana);
+  kanonski URL-ovi zamijenjeni (14 fajlova, testovi 60/60, push 89d7577).
+  Lokalni remote `~/agentmujo-training` preusmjeren. Dated audit headeri ostaju.
 - Salamandra 2B/7B audit: arh, tokenizer, licenca, revizije pinovane; bs pokrivenost tanka/neevaluirana → obavezna vlastita evaluacija (fertility, perplexity, bench na bs)
 - 4B opcije: (A) nova arh + CPT, (B) distilacija 7B→4B, (C) 2B odmah. Preporuka: (C) za brz rezultat, (A)+(B) za pravi 4B
 - Framework audit: generički dataset/eval/CLI/DPO dijelovi OK; Qwen-vezano izolirano (format.py, models.yaml, 76 configova, GGUF/Ollama put); fali template adapter + registry + configovi + GGUF protokol

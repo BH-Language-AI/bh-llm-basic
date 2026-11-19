@@ -18,6 +18,8 @@ def main() -> None:
     ap.add_argument("--train", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--max-steps", type=int, default=100)
+    ap.add_argument("--cpu", action="store_true",
+                    help="lokalna CPU validacija (use_cpu, bez bf16)")
     a = ap.parse_args()
 
     import torch
@@ -54,11 +56,13 @@ def main() -> None:
                                       "down_proj"],
                       task_type="CAUSAL_LM")
     model = get_peft_model(model, lora)
+    # transformers>=5: nema warmup_ratio, samo warmup_steps.
     args = TrainingArguments(
         output_dir=a.out, per_device_train_batch_size=1,
         gradient_accumulation_steps=8, learning_rate=2e-5,
-        max_steps=a.max_steps, warmup_ratio=0.05, logging_steps=10,
-        save_steps=50, save_total_limit=1, bf16=True,
+        max_steps=a.max_steps, warmup_steps=max(1, a.max_steps // 20),
+        logging_steps=10,
+        save_steps=50, save_total_limit=1, bf16=not a.cpu, use_cpu=a.cpu,
         gradient_checkpointing=True, seed=42, report_to="none")
     Trainer(model=model, args=args, train_dataset=ds,
             data_collator=collate).train()

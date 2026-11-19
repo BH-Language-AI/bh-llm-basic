@@ -46,7 +46,13 @@ ne dirati. Leakage: cross-dataset dedup + `leakage_report.json` (reuse
       bs-opce 16.0 / bs-admin 31.9 / en 25.8 / bs-kolok 68.2 /
       bs-lokal (Jelah/Tešanj) 174.6 / bs-knjiz 599.4.
       Zakljucak: opci jezik OK, lokalni toponimi i kolokacije rupe -> CPT ima sta popraviti.
-- [ ] dokument-level PPL (`scripts/ppl_baseline.py`, klix+wiki po 5 dokova — u toku)
+- [x] dokument-level PPL (`scripts/ppl_baseline.py`, klix+wiki po 5 dokova):
+      klix 19.6/17.5/11.9/27.9/32.5 (sredina ~21.9);
+      wiki 15.4/19.5/19.1/24.1/15.2 (sredina ~18.7).
+      Standardni news/enciklopedijski bs baza drzi (10-30 ocekivano za base);
+      rupe ostaju lokalno/kolokvijalno/knjizevno (single-sentence test).
+      Filter-pravilo v0.1: PPL>100 na LUMI ingestu -> drop (sum); lokalno v0.1
+      samo heuristic filteri (duzina, ijekavica udio, dedup hash).
 - [x] izvorni profili (4 nova izvora)
 - [x] template adapter + self-check
 - [x] SFT config (`configs/salamandra-2b-sft01.yaml`)

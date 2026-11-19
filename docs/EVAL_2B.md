@@ -7,8 +7,8 @@ odvojen od traina. Ovaj protokol se zamrzava PRIJE prvog GPU runa.
 
 | Sloj | Benchmark | Zasto | Status |
 |---|---|---|---|
-| Razumijevanje | Belebele `bs` | citanje s razumijevanjem, postoji bs split | kandidat |
-| Prijevod | Flores-200 `bs<->en` | zlatni standard, bs pokriven | kandidat |
+| Razumijevanje | Belebele `hrv_Latn` (proxy) | bs NE POSTOJI u Belebele (provjereno 2026-11-19); hrv najblizi srodnik | hrv proxy |
+| Prijevod | Flores-200 `bos_Latn` | GATED dataset (treba pristup) — baseline tek nakon odobrenja | BLOKIRANO |
 | Zdrav razum | ARC/hr-sr-bs prijevodi + PIQA-bs (sinteticki?) | NEMA gotovog bs — treba prevesti/provjeriti | GAP |
 | Znanje BiH | vlastiti set (50-100 pitanja: ustav, kantoni, historija) | niko drugi ne pokriva | NAPRAVITI, held-out |
 | Sigurnost/bias | BBQ-primacy probe + safety-probe (postojeci) | BBQ bias potvrdjen u SALAMANDRA.md | postoji safety |

@@ -1,9 +1,9 @@
 # BH-LLM-Basic 2B — miks v0.1 (DRAFT, ceka PPL filter + LUMI smoke)
 
 Objavljeno: [BH-Language-AI/bs-llm-2b-mix-v01](https://huggingface.co/datasets/BH-Language-AI/bs-llm-2b-mix-v01) (2026-11-20, kartica s licencama).
-Baza: `BSC-LT/salamandra-2b` @ `1812f382`. Render: `scripts/render_salamandra.py`.
+Baza: `BSC-LT/salamandra-2b` @ `3f18e03d5e37`. Render: `scripts/render_salamandra.py`.
 
-Baza: `BSC-LT/salamandra-2b` @ `1812f382`. Render: `scripts/render_salamandra.py`.
+Baza: `BSC-LT/salamandra-2b` @ `3f18e03d5e37`. Render: `scripts/render_salamandra.py`.
 Mjerenja: fertility **1.57 tok/rijec** (256k vocab, CPU, 8 bs recenica);
 izvorni profili u `docs/SOURCE_PROFILES_2B.json` (cap 2000, heuristike grube).
 

@@ -1,6 +1,6 @@
 # BH-LLM-Basic 2B — dataset plan (Faza 0 → priprema)
 
-Datum: 2026-11-19. Baza: `BSC-LT/salamandra-2b` @ `1812f382` (Apache-2.0, base, vocab 256k, ctx 8k).
+Datum: 2026-11-19. Baza: `BSC-LT/salamandra-2b` @ `3f18e03d5e37` (Apache-2.0, base, vocab 256k, ctx 8k).
 Framework: agentmujo-training (transfer u BH-Language-AI u toku — BEZ forka, čeka odobrenje).
 Cilj: CPT + SFT miks za bosanski (ijekavica, latinica; razumijevanje ćirilice) + Balkan/hr/sr + EN za tehniku.
 

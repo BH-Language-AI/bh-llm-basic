@@ -3,7 +3,7 @@
 Datum: 2026-11-11. Izvori uz svaku tvrdnju; NEPROVJERENO gdje nije potvrđeno.
 
 ## Salamandra-2B (`BSC-LT/salamandra-2b`)
-Decoder-only Llama-tip: 24 sloja, hidden 2048, FFN 5440, 16/16 glava (MHA), 2.25B ukupno, vocab 256k, context 8192, RoPE theta 10k, SwiGLU/RMSNorm, BF16, FlashAttention. Tokenizer: SentencePiece BPE 256k (`LlamaTokenizer`, bos 1, eos 2), byte_fallback, split_digits, NFC. Trening: 12.875T tokena, NeMo/MN5 (256 GPU). Težine: 1× safetensors 4.51GB. Revizija težina v1.1: `1812f3829e12308541b3ea2fede5366f29d3ee92`.
+Decoder-only Llama-tip: 24 sloja, hidden 2048, FFN 5440, 16/16 glava (MHA), 2.25B ukupno, vocab 256k, context 8192, RoPE theta 10k, SwiGLU/RMSNorm, BF16, FlashAttention. Tokenizer: SentencePiece BPE 256k (`LlamaTokenizer`, bos 1, eos 2), byte_fallback, split_digits, NFC. Trening: 12.875T tokena, NeMo/MN5 (256 GPU). Težine: 1× safetensors 4.51GB. Revizija težina v1.1: `3f18e03d5e37151681351349b9a42ad17121f4f5`.
 Izvori: model card + config.json + arXiv:2502.08489.
 
 ## Salamandra-7B (`BSC-LT/salamandra-7b`)

@@ -41,7 +41,7 @@ srun -n1 singularity exec "$SIF" env PYTHONPATH="$PYLIBS" python -c \
 cd "$JOBDIR"
 srun --unbuffered singularity exec -B "$JOBDIR:/job" -B /scratch:/scratch "$SIF" \
   python -u /job/training/train_sft.py --model BSC-LT/salamandra-2b \
-    --rev 1812f3829e123d08541b3ea2fede5366f29d3ee92 \
+    --rev 3f18e03d5e37151681351349b9a42ad17121f4f5 \
     --train /job/data/smoke_sft.jsonl --out /job/out/adapter-smoke \
     --max-steps "$MAXSTEPS"
 echo SMOKE_DONE

@@ -4,7 +4,7 @@
 experiment_id: salamandra-2b-sft-01
 mode: sft
 model_name: BSC-LT/salamandra-2b
-model_revision: 1812f3829e123d08541b3ea2fede5366f29d3ee92
+model_revision: 3f18e03d5e37151681351349b9a42ad17121f4f5
 dataset: BH-Language-AI/bs-llm-2b-mix-v01
 dataset_revision: TBD-miks-manifest-v01
 data_file: sft_mix_v01.jsonl

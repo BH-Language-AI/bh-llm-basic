@@ -18,7 +18,7 @@
 {"id": "bih-018", "cat": "historija", "q": "Koje godine su odrzane Zimske olimpijske igre u Sarajevu?", "a": "1984. godine (XIV Zimske olimpijske igre)."}
 {"id": "bih-019", "cat": "geografija", "q": "Koje planine okruzuju Sarajevo i bile su olimpijska borilista?", "a": "Bjelasnica, Igman i Jahorina (i Trebevic za bob/sankanje)."}
 {"id": "bih-020", "cat": "uredjenje", "q": "Koji je sluzbeni naziv drzave na engleskom i njena internet domena?", "a": "Bosnia and Herzegovina; domena .ba."}
-{"id": "bih-021", "cat": "privreda", "q": "Koje je najvece izvozno trziste... Koja grana je tradicionalno najvaznija u tesanjskom kraju?", "a": "Metalopreradjivacka i drvna industrija te trgovina; Tesanj je poznat po privrednoj zoni (npr. alatni i tekstilni pogoni)."}
+{"id": "bih-021", "cat": "privreda", "q": "Po kojim granama privrede je poznat tesanjski kraj?", "a": "Metalopreradjivacka industrija, drvna industrija i trgovina."}
 {"id": "bih-022", "cat": "geografija", "q": "Kroz koji grad protice rijeka Miljacka?", "a": "Kroz Sarajevo."}
 {"id": "bih-023", "cat": "geografija", "q": "Kroz koji grad protice rijeka Vrbas?", "a": "Kroz Banju Luku."}
 {"id": "bih-024", "cat": "geografija", "q": "Kroz koji grad protice rijeka Neretva?", "a": "Kroz Mostar (i Konjic, Capljinu)."}
@@ -40,7 +40,7 @@
 {"id": "bih-040", "cat": "uredjenje", "q": "Koji je glavni grad Federacije BiH?", "a": "Sarajevo."}
 {"id": "bih-041", "cat": "geografija", "q": "Koja planina dijeli Sarajevo i Pale, poznata i kao izletiste?", "a": "Trebevic."}
 {"id": "bih-042", "cat": "historija", "q": "Kada je Bosna i Hercegovina primljena u Ujedinjene nacije?", "a": "22. maja 1992. godine."}
-{"id": "bih-043", "cat": "kultura", "q": "Kako se zove tradicionalna bosanska nosnja... Koji je naziv tradicionalnog bosanskog tepiha/vezene tkanine?", "a": "Cilim (bosanski cilim, geometrijski motivi)."}
+{"id": "bih-043", "cat": "kultura", "q": "Kako se zove tradicionalni bosanski vuneni tepih s geometrijskim motivima?", "a": "Cilim (bosanski cilim)."}
 {"id": "bih-044", "cat": "jezik", "q": "Koja pisma se koriste u bosanskom jeziku i koje je primarno?", "a": "Latinica (primarna) i cirilica; sluzbeno su ravnopravna."}
 {"id": "bih-045", "cat": "jezik", "q": "Koji izgovor je standardan u bosanskom jeziku: ijekavski ili ekavski?", "a": "Ijekavski (npr. lijepo, vrijeme, dijete)."}
 {"id": "bih-046", "cat": "geografija", "q": "Koji grad je poznat po Starom mostu?", "a": "Mostar."}

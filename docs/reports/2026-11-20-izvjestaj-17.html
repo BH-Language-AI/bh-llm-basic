@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 17</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 17 — procjena punog runa (traži odluku)</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">20. novembar 2026 · mjereno: 2,6 s/korak na MI250X</div>
+</div>
+<div style="padding:24px 28px;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#0b3d2e;color:#fff;"><td style="padding:8px;"><b>Opcija (1 epoha)</b></td><td style="padding:8px;"><b>Koraci</b></td><td style="padding:8px;"><b>GPU sati</b></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;"><b>A — CPT fokus ~200k + SFT 122k (preporuka)</b></td><td style="padding:8px;border:1px solid #ddd;">23.000 + 15.300</td><td style="padding:8px;border:1px solid #ddd;"><b>~28 h</b></td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;">B — CPT puni 401k + SFT 122k</td><td style="padding:8px;border:1px solid #ddd;">46.000 + 15.300</td><td style="padding:8px;border:1px solid #ddd;">~44 h</td></tr>
+</table>
+<p style="font-size:13px;">Kalibracija iz smokea (CPT 2000 dok → 230 koraka/epoha; SFT 2000 redova → 250/epoha). Alokacija: trošeno 663/5000 GPUh — obje opcije stanu komotno. Submit-paket spreman (<code>slurm/salamandra-2b-full.sbatch</code> + oba yaml configa + podaci na HF-u).</p>
+<div style="background:#fff3cd;border-left:4px solid #cc9900;padding:14px 16px;font-size:14px;">
+<b>Pitanje za vas:</b> A ili B? + zeleno svjetlo za submit. Prvih 200 koraka služe kao kalibracija — ako throughput odudara, stajem i javljam prije trošenja.
+</div>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

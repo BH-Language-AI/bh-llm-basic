@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 18</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 18 — full-run ulazi spremni na LUMI-u</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">20. novembar 2026</div>
+</div>
+<div style="padding:24px 28px;">
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#0b3d2e;color:#fff;"><td style="padding:8px;"><b>Fajl (job-full/)</b></td><td style="padding:8px;"><b>Redova</b></td><td style="padding:8px;"><b>Status</b></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">data/cpt_focus.jsonl</td><td style="padding:8px;border:1px solid #ddd;">201.819</td><td style="padding:8px;border:1px solid #ddd;">wiki 68k + klix 49k + finetome 34k + bc-v03 uzorak 50k + sitno</td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;">data/sft_full_rendered.jsonl</td><td style="padding:8px;border:1px solid #ddd;">122.196</td><td style="padding:8px;border:1px solid #ddd;">renderirano kroz template adapter</td></tr>
+</table>
+<ul style="font-size:13px;">
+<li>Brojevi na LUMI-u <b>identični lokalnima</b> (201.819 / 122.196) — transfer kao tar, struktura sačuvana.</li>
+<li>Usput uhvaćena 2 bug-a u skripti (zatvoren fajl; meta.src puna HF imena) — oba popravljena i verificirana.</li>
+<li>Skripta <code>scripts/build_full_inputs.py</code> pushana — ulazi se mogu reproducirati.</li>
+<li>Submit čeka <b>vaše zeleno svjetlo (A/B iz izvještaja 17)</b>.</li>
+</ul>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

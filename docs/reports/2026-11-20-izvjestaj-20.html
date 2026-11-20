@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 20</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 20 — odustajanje od dugog runa, kratki plan</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">20. novembar 2026 (veče)</div>
+</div>
+<div style="padding:24px 28px;">
+<p style="font-size:14px;">Po vašoj odluci puni CPT se ne radi. Novi plan — <b>kratki SFT, ~1,9 h</b>:</p>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#0b3d2e;color:#fff;"><td style="padding:8px;"><b>Sastav (21.000 redova)</b></td><td style="padding:8px;"><b>Koraci / vrijeme</b></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">instruct 1,5k + knowledge 16k + function-calling 2k + safety 1,5k</td><td style="padding:8px;border:1px solid #ddd;">2.625 koraka ≈ <b>1,9 h</b> (1×MI250X)</td></tr>
+</table>
+<ul style="font-size:13px;">
+<li>Ulaz renderiran i spreman lokalno (<code>sft_short21k.jsonl</code>); na LUMI ide uz sljedeći transfer čim se cert osvježi.</li>
+<li>Gate nakon runa: Belebele-hrv + BiH set + safety-proba. Ako prođe — proširenje; ako ne — stali smo na 2 sata, ne na 30.</li>
+<li>Skripta <code>scripts/build_short_sft.py</code> pushana (reproducibilno).</li>
+</ul>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

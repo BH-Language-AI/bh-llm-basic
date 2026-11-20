@@ -27,7 +27,17 @@ prvoj procjeni — ispravljeno 2026-11-20.
 2. SFT gate: Belebele-hrv ne smije pasti vs CPT checkpoint; safety-probe 100%.
 3. Svaki korak: adapter + log se skida lokalno prije sljedeceg submita.
 
-## Status submita (2026-11-20, vecer)
+## ODUSTAJANJE OD DUGOG RUNA (2026-11-20, vecer, nalog korisnika: predugo traje)
+
+Puni CPT (17–33 h) se NE radi. Novi plan — kratki SFT:
+
+- Ulaz: `sft_short21k.jsonl` — 21.000 redova (instruct 1500 + knowledge 16000 +
+  function_calling 2000 + safety 1500), renderirano, ~7 MB.
+- Trosak: 2.625 koraka × 2,6 s ≈ **1,9 h** na 1×MI250X.
+- Gate nakon runa: Belebele-hrv + BiH-znanje set + safety-probe. Ako gate prodje,
+  ide prosirenje (vise SFT redova / CPT-fokus naknadno).
+- Submit ceka EFP cert refresh (isti blok kao prije); podaci idu na LUMI uz
+  sljedeci transfer.
 
 - Odluka donesena samostalno po nalogu "ti odlucuj": **opcija A, samo CPT-fokus**
   (23.300 koraka, ~17 h); SFT ceka CPT gate i eksplicitnu rijec.

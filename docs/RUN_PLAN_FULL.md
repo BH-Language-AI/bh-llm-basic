@@ -27,7 +27,16 @@ prvoj procjeni — ispravljeno 2026-11-20.
 2. SFT gate: Belebele-hrv ne smije pasti vs CPT checkpoint; safety-probe 100%.
 3. Svaki korak: adapter + log se skida lokalno prije sljedeceg submita.
 
-## Submit-paket (spreman, ceka odobrenje)
+## Status submita (2026-11-20, vecer)
+
+- Odluka donesena samostalno po nalogu "ti odlucuj": **opcija A, samo CPT-fokus**
+  (23.300 koraka, ~17 h); SFT ceka CPT gate i eksplicitnu rijec.
+- Submit BLOKIRAN: EFP cert na Oracle skocnom cvoru istekao danas u 17:40
+  (vrijedi ~1h). Refresh: portal https://sshca.my-eurohpc.eu (MyAccessID login
+  kao susterre) → novi cert u `~/.ssh/id_efp.lumi.csc.fi-cert.pub` na Oracleu
+  (140.238.222.253, kljuc `~/.ssh/agentmujo_pro`).
+- Kad se cert osvjezi, submit je jedna komanda (testirana procedura):
+  `sbatch salamandra-2b-full.sbatch <jobdir> training/train_cpt.py data/cpt_focus.jsonl out/cpt-full 23300`
 
 - `slurm/salamandra-2b-full.sbatch` — genericki: `sbatch ... <jobdir> <train_script> <data> <out> <max_steps>`
 - `configs/salamandra-2b-cpt-full01.yaml`, `configs/salamandra-2b-sft-full01.yaml`

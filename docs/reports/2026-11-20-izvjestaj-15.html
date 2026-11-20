@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 15</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 15 — PRVI USPJEŠAN TRENING NA LUMI-u</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">20. novembar 2026 · job 23885170 COMPLETED 0:0</div>
+</div>
+<div style="padding:24px 28px;">
+<div style="background:#eef4f1;border-left:4px solid #0b3d2e;padding:14px 16px;font-size:15px;">
+<b>Salamandra-2B + LoRA r16, 100 koraka, 1×MI250X, bf16 — loss 3,62 → 2,16.</b><br>
+<span style="font-size:13px;color:#555;">Vrijeme: ~4,5 min treninga (2,6 s/korak). Adapter 59,7 MB.</span>
+</div>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Verifikacija adaptera (lokalno)</h3>
+<ul style="font-size:13px;">
+<li>Adapter se učitava na pinovanu bazu (<code>3f18e03d…</code>), r16, svi LoRA moduli.</li>
+<li>Probna generacija — pitanje <i>"Koji je glavni grad BiH?"</i> → počinje tačno:
+<i>"Bosna i Hercegovina (… ) — država u jugoistočnoj Europi…"</i> (100 koraka, 2000 redova — orijentir, ne kvalitet).</li>
+</ul>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Šta je dokazano</h3>
+<ul style="font-size:13px;">
+<li>Cijeli lanac radi: HF miks → LUMI scratch → trening → adapter → lokalna verifikacija.</li>
+<li>Receptura (sbatch + skripte + template adapter) je ispravna na pravom hardveru.</li>
+<li>Sljedeće po planu: <b>CPT smoke</b> istom recepturom, pa odluka o punom runu (uz odobrenje).</li>
+</ul>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

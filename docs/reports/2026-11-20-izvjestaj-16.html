@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bs"><head><meta charset="utf-8">
+<title>BH-LLM-Basic 2B — Izvještaj br. 16</title></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,Helvetica,sans-serif;color:#222;">
+<div style="max-width:640px;margin:0 auto;background:#ffffff;">
+<div style="background:#0b3d2e;color:#ffffff;padding:24px 28px;">
+<div style="font-size:12px;letter-spacing:2px;opacity:.8;">BH-LANGUAGE-AI · BH-LLM-BASIC 2B</div>
+<div style="font-size:22px;font-weight:bold;margin-top:6px;">Izvještaj br. 16 — CPT smoke gotov, obje recepture rade</div>
+<div style="font-size:13px;opacity:.85;margin-top:4px;">20. novembar 2026 · job 23890706 COMPLETED 0:0</div>
+</div>
+<div style="padding:24px 28px;">
+<div style="background:#eef4f1;border-left:4px solid #0b3d2e;padding:14px 16px;font-size:15px;">
+<b>CPT smoke: 100/100 koraka, train_loss 3,652, loss stabilan ~3,55.</b><br>
+<span style="font-size:13px;color:#555;">Očekivano: baza već dobro modelira standardni tekst (doc-PPL ~20 → ln ≈ 3,0), CPT pomiče repove — toponime, kolokacije, registre.</span>
+</div>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Presjek oba smokea</h3>
+<table style="width:100%;border-collapse:collapse;font-size:13px;">
+<tr style="background:#0b3d2e;color:#fff;"><td style="padding:8px;"><b>Smoke</b></td><td style="padding:8px;"><b>Job</b></td><td style="padding:8px;"><b>Loss</b></td><td style="padding:8px;"><b>Status</b></td></tr>
+<tr><td style="padding:8px;border:1px solid #ddd;">SFT (2000 redova)</td><td style="padding:8px;border:1px solid #ddd;">23885170</td><td style="padding:8px;border:1px solid #ddd;">3,62 → 2,16</td><td style="padding:8px;border:1px solid #ddd;">Adapter verificiran generacijom</td></tr>
+<tr style="background:#eef4f1;"><td style="padding:8px;border:1px solid #ddd;">CPT (2000 dok.)</td><td style="padding:8px;border:1px solid #ddd;">23890706</td><td style="padding:8px;border:1px solid #ddd;">~3,55 stabilan</td><td style="padding:8px;border:1px solid #ddd;">Adapter na scratchu</td></tr>
+</table>
+<h3 style="color:#0b3d2e;border-bottom:2px solid #0b3d2e;padding-bottom:4px;">Šta je dokazano / šta fali</h3>
+<ul style="font-size:13px;">
+<li>Obje recepture (CPT + SFT) rade end-to-end na MI250X, bf16, LoRA r16.</li>
+<li>Puni run = isti kod, veći podaci + više koraka; trosak red veličine veći od smokea.</li>
+<li>Prije punog runa treba: <b>GPU odobrenje (vi)</b> + zamrznuti finalni miks i eval gateove (spremno).</li>
+</ul>
+<p style="font-size:14px;margin-top:20px;">Lijep pozdrav,<br><b>Muse Spark</b> (OpenCode)</p>
+</div>
+<div style="background:#0b3d2e;color:#fff;font-size:11px;padding:12px 28px;">BH-Language-AI · bh-llm-basic · izvještaji: xnetba@gmail.com, renato@gamatrade.ba</div>
+</div>
+</body></html>

@@ -60,4 +60,6 @@ ne dirati. Leakage: cross-dataset dedup + `leakage_report.json` (reuse
 - [x] template adapter + self-check
 - [x] SFT config (`configs/salamandra-2b-sft01.yaml`)
 - [ ] PPL filter prag + zamrznuti manifest + leakage izvjestaj
-- [ ] LUMI smoke LoRA (ceka cert refresh + GPU odobrenje — vec trazeno)
+- [x] CPT smoke LUMI (job 23890706 COMPLETED, 100/100, train_loss 3.652, loss stabilan ~3.55 — ocekivano: baza vec dobro modelira standardni tekst, doc-PPL ~20 → ln ≈ 3.0)
+- [x] SFT smoke LUMI (job 23885170 COMPLETED, loss 3.62→2.16, adapter verificiran generacijom)
+- [ ] Puni CPT+SFT run (ceka GPU odobrenje — trosak: CPT puni miks je red velicine vise koraka)

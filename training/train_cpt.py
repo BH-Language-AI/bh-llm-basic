@@ -22,8 +22,8 @@ def main() -> None:
     a = ap.parse_args()
 
     import torch
-    from datasets import Dataset
     from peft import LoraConfig, get_peft_model
+    from torch.utils.data import Dataset as TorchDataset
     from transformers import (AutoModelForCausalLM, AutoTokenizer,
                               Trainer, TrainingArguments)
 
@@ -44,7 +44,15 @@ def main() -> None:
             if len(c) > 128:
                 ids_all.append(c)
     print(f"chunkova: {len(ids_all)}", flush=True)
-    ds = Dataset.from_dict({"input_ids": ids_all})
+    # shortcut: obican torch Dataset (datasets 5.2 + pyarrow 26 puca na dillu).
+    class ListDS(TorchDataset):
+        def __init__(self, ids):
+            self.ids = ids
+        def __len__(self):
+            return len(self.ids)
+        def __getitem__(self, i):
+            return {"input_ids": self.ids[i]}
+    ds = ListDS(ids_all)
 
     def collate(b):
         import torch as T

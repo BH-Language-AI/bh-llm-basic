@@ -23,8 +23,8 @@ def main() -> None:
     a = ap.parse_args()
 
     import torch
-    from datasets import Dataset
     from peft import LoraConfig, get_peft_model
+    from torch.utils.data import Dataset as TorchDataset
     from transformers import (AutoModelForCausalLM, AutoTokenizer,
                               Trainer, TrainingArguments)
 
@@ -37,8 +37,17 @@ def main() -> None:
         a.model, revision=a.rev, dtype=torch.bfloat16,
         trust_remote_code=False)
     enc = tok(texts, truncation=True, max_length=2048)
-    ds = Dataset.from_dict({"input_ids": enc["input_ids"],
-                            "attention_mask": enc["attention_mask"]})
+    # shortcut: obican torch Dataset umjesto datasets.from_dict
+    # (datasets 5.2 + pyarrow 26 puca na dill fingerprintu: MonthDayNano).
+    class ListDS(TorchDataset):
+        def __init__(self, ids, mask):
+            self.ids, self.mask = ids, mask
+        def __len__(self):
+            return len(self.ids)
+        def __getitem__(self, i):
+            return {"input_ids": self.ids[i],
+                    "attention_mask": self.mask[i]}
+    ds = ListDS(enc["input_ids"], enc["attention_mask"])
 
     def collate(b):
         import torch as T
